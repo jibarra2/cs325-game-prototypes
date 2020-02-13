@@ -1,3 +1,6 @@
+"use strict";
+
+window.onload = function() {
 var Breakout = new Phaser.Class({
 
     Extends: Phaser.Scene,
@@ -15,7 +18,7 @@ var Breakout = new Phaser.Class({
 
     preload: function ()
     {
-        this.load.atlas('assets', 'assets/games/breakout/breakout.png', 'assets/games/breakout/breakout.json');
+        this.load.atlas('assets', 'cs325-games-prototypes/Digital Game 1/assets');
     },
 
     create: function ()
@@ -129,7 +132,7 @@ var config = {
     type: Phaser.WEBGL,
     width: 800,
     height: 600,
-    parent: 'phaser-example',
+    new Phaser.Game(): 'game',
     scene: [ Breakout ],
     physics: {
         default: 'arcade'
@@ -138,3 +141,9 @@ var config = {
 
 var game = new Phaser.Game(config);
 
+
+    // The assets (and code) can be found at: https://github.com/photonstorm/phaser/tree/master/examples/assets
+    // You will need to change the paths you pass to "game.load.image()" or any other
+    // loading functions to reflect where you are putting the assets.
+    // All loading functions will typically all be found inside "preload()".
+    
