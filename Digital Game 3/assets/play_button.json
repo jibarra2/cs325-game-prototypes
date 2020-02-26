@@ -10,10 +10,10 @@
 },
 {
 	"filename": "waiting",
-	"frame": {"x":0,"y":40,"w":193,"h":40},
+	"frame": {"x":0,"y":20,"w":193,"h":71},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":193,"h":40},
+	"spriteSourceSize": {"x":0,"y":0,"w":193,"h":71},
 	"sourceSize": {"w":193,"h":71}
 },
 {
