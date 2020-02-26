@@ -1,23 +1,23 @@
 {"frames": [
 
 {
-	"filename": "down",
-	"frame": {"x":0,"y":142,"w":193,"h":71},
+	"filename": "starting",
+	"frame": {"x":0,"y":139,"w":193,"h":71},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":193,"h":71},
 	"sourceSize": {"w":193,"h":71}
 },
 {
-	"filename": "out",
-	"frame": {"x":0,"y":71,"w":193,"h":71},
+	"filename": "waiting",
+	"frame": {"x":0,"y":68,"w":193,"h":71},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":193,"h":71},
 	"sourceSize": {"w":193,"h":71}
 },
 {
-	"filename": "over",
+	"filename": "start",
 	"frame": {"x":0,"y":0,"w":193,"h":71},
 	"rotated": false,
 	"trimmed": false,
