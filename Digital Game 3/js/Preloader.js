@@ -29,7 +29,7 @@ BasicGame.Preloader.prototype = {
 		this.load.atlas('playButton', 'assets/Buttons.png', 'assets/play_button.json');
 		this.load.audio('titleMusic', ['assets/Losingmycatssong.mp3']);
 		//	+ lots of other required assets here
-        this.load.image( 'logo', 'assets/Basket.jpg' );
+        this.load.image( 'logo', 'assets/scoopnet.png' );
 	},
 
 	create: function () {
