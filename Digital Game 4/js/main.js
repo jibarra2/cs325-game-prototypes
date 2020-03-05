@@ -16,7 +16,7 @@ window.onload = function() {
         width: 800,
         height: 600,
         backgroundColor: '#bfcc00',
-        parent: 'game',
+        parent: "game",
         scene: {
             preload: preload,
             create: create,
