@@ -11,6 +11,7 @@ window.onload = function() {
     // loading functions to reflect where you are putting the assets.
     // All loading functions will typically all be found inside "preload()".
     "use strict";
+    
     var config = {
         type: Phaser.AUTO,
         width: 800,
