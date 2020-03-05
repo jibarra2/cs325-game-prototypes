@@ -62,26 +62,12 @@ window.onload = function() {
     
                 this.total = 0;
     
-                this.eatEffect = {
-                    frequency: 523.25,
-                    attack: 0.05,
-                    decay: 0.2,
-                    type: 'sine',
-                    volume: 3,
-                    pan: 0.8,
-                    pitchBend: 600,
-                    reverse: true,
-                    random: 100
-                };
-    
                 scene.children.add(this);
             },
     
             eat: function ()
             {
                 this.total++;
-    
-                new Phaser.Sound.Dynamic.FX(ctx, this.eatEffect);
             }
     
         });
@@ -109,13 +95,6 @@ window.onload = function() {
     
                 this.heading = RIGHT;
                 this.direction = RIGHT;
-    
-                this.deathEffect = {
-                    frequency: 16,
-                    decay: 1,
-                    type: 'sawtooth',
-                    dissonance: 50
-                };
             },
     
             update: function (time)
@@ -199,9 +178,6 @@ window.onload = function() {
                 if (hitBody)
                 {
                     console.log('dead');
-    
-                    //  Game Over
-                    new Phaser.Sound.Dynamic.FX(ctx, this.deathEffect);
     
                     this.alive = false;
     
