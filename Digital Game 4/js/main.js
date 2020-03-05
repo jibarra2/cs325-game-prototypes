@@ -15,7 +15,7 @@ window.onload = function() {
         type: Phaser.WEBGL,
         width: 640,
         height: 480,
-        backgroundColor: '#bfcc01',
+        backgroundColor: '#bfcc00',
         parent: new Phaser.Game(),
         scene: {
             preload: preload,
