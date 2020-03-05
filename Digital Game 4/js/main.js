@@ -12,9 +12,9 @@ window.onload = function() {
     // All loading functions will typically all be found inside "preload()".
     
     var config = {
-        type: Phaser.WEBGL,
-        width: 640,
-        height: 480,
+        type: Phaser.AUTO,
+        width: 800,
+        height: 600,
         backgroundColor: '#bfcc00',
         parent: 'game',
         scene: {
@@ -40,8 +40,8 @@ window.onload = function() {
     
     function preload ()
     {
-        this.load.image('food', 'Users/Jonathan/Desktop/cs325-game-prototypes/Digital Game 4/assets/food.png');
-        this.load.image('body', 'Users/Jonathan/Desktop/cs325-game-prototypes/Digital Game 4/assets/body.png');
+        this.load.image('food','assets/food.png');
+        this.load.image('body','assets/body.png');
     }
     
     function create ()
