@@ -16,7 +16,7 @@ window.onload = function() {
         width: 640,
         height: 480,
         backgroundColor: '#bfcc00',
-        parent: new Phaser.Game(game),
+        parent: 'game',
         scene: {
             preload: preload,
             create: create,
