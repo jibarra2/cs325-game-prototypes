@@ -10,7 +10,7 @@ window.onload = function() {
     // You will need to change the paths you pass to "game.load.image()" or any other
     // loading functions to reflect where you are putting the assets.
     // All loading functions will typically all be found inside "preload()".
-    
+    "use strict";
     var config = {
         type: Phaser.AUTO,
         width: 800,
