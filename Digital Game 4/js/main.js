@@ -40,8 +40,8 @@ window.onload = function() {
     
     function preload ()
     {
-        this.load.image('food', 'assets/food.png');
-        this.load.image('body', 'assets/body.png');
+        this.load.image('food', 'assets/food.jpg');
+        this.load.image('body', 'assets/body.jpg');
     }
     
     function create ()
