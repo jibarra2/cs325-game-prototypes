@@ -132,7 +132,7 @@ window.onload = function() {
         }
     
     });
-    
+    };
     var config = {
         type: Phaser.WEBGL,
         width: 800,
@@ -145,4 +145,4 @@ window.onload = function() {
     };
     
     var game = new Phaser.Game(config);
-};
+
