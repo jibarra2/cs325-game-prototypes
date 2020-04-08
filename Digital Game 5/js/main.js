@@ -27,7 +27,7 @@ window.onload = function() {
     
         preload: function ()
         {
-            this.load.atlas('assets', 'assets/games/breakout/breakout.png', 'assets/games/breakout/breakout.json');
+            this.load.atlas('assets', 'assets/breakout.png', 'assets/breakout.json');
         },
     
         create: function ()
