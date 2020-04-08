@@ -129,7 +129,7 @@
         type: Phaser.WEBGL,
         width: 800,
         height: 600,
-        parent: 'game',
+        parent: "game",
         scene: [ Breakout ],
         physics: {
             default: 'arcade'
