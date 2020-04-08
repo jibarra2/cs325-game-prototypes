@@ -1,11 +1,3 @@
-"use strict";
-
-window.onload = function() {
-    // The assets (and code) can be found at: https://github.com/photonstorm/phaser/tree/master/examples/assets
-    // You will need to change the paths you pass to "game.load.image()" or any other
-    // loading functions to reflect where you are putting the assets.
-    // All loading functions will typically all be found inside "preload()".
-    
     var Breakout = new Phaser.Class({
 
         Extends: Phaser.Scene,
@@ -132,7 +124,7 @@ window.onload = function() {
         }
     
     });
-    };
+    
     var config = {
         type: Phaser.WEBGL,
         width: 800,
@@ -145,4 +137,3 @@ window.onload = function() {
     };
     
     var game = new Phaser.Game(config);
-
