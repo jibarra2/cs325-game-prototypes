@@ -18,6 +18,10 @@ window.onload = function() {
             Breakout: Breakout,
             preload: preload,
             create: create,
+            hitBrick: hitBrick,
+            resetBall: resetBall,
+            resetLevel: resetLevel,
+            hitPaddle: hitPaddle,
             update: update
         },
         physics: {
