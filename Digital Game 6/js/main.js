@@ -42,11 +42,14 @@ window.onload = function() {
 
     function preload() {
         this.load.atlas('elements', 'assets/breakout.png', 'assets/breakout.json');
+        game.load.image('paddle', 'assets/paddle1.png');
     }
     function create() {
           //  Enable world bounds, but disable the floor
           this.physics.world.setBoundsCollision(true, true, true, false);
 
+          game.add.sprite(400, 550, 'paddle');
+          
           //  Create the bricks in a 10x6 grid
           this.bricks = this.physics.add.staticGroup({
               key: 'elements', frame: [ 'blue1', 'red1', 'green1', 'yellow1', 'silver1', 'purple1' ],
