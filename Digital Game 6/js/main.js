@@ -10,11 +10,15 @@ window.onload = function() {
     // loading functions to reflect where you are putting the assets.
     // All loading functions will typically all be found inside "preload()".
     var config = {
-        type: Phaser.WEBGL,
+        type: Phaser.AUTO,
         width: 800,
         height: 600,
         parent: 'game',
-        scene: [ Breakout ],
+        scene: {
+            preload: preload,
+            create: create,
+            update: update
+        }
         physics: {
             default: 'arcade'
         }
