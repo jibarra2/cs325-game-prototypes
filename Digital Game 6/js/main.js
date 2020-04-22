@@ -1,3 +1,6 @@
+"use strict";
+
+window.onload = function() {
     // You can copy-and-paste the code from any of the examples at http://examples.phaser.io here.
     // You will need to change the fourth parameter to "new Phaser.Game()" from
     // 'phaser-example' to 'game', which is the id of the HTML element where we
@@ -10,14 +13,10 @@
         type: Phaser.AUTO,
         width: 800,
         height: 600,
-        parent: 'game',
         scene: {
             preload: preload,
             create: create,
             update: update
-        }
-        physics: {
-            default: 'arcade'
         }
     };
     
@@ -32,3 +31,4 @@
     function update() {
 
     }
+};
