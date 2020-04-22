@@ -15,16 +15,29 @@ window.onload = function() {
         height: 600,
         parent: 'game',
         scene: {
+            Breakout: Breakout,
             preload: preload,
             create: create,
             update: update
+        },
+        physics: {
+            default: 'arcade'
         }
     };
     
     var game = new Phaser.Game(config);
     
-    function preload() {
+    function Breakout ()
+    {
+        Phaser.Scene.call(this, { key: 'breakout' });
 
+        this.bricks;
+        this.paddle;
+        this.ball;
+    }
+
+    function preload() {
+        this.load.atlas('assets', 'assets/breakout.png', 'assets/breakout.json');
     }
     function create() {
 
