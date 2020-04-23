@@ -100,6 +100,11 @@ window.onload = function() {
         // in X or Y.
         // This function returns the rotation angle that makes it visually match its
         // new trajectory.
+        game.physics.arcade.overlap(bouncy, cars, collectCar, null, this)
         bouncy.rotation = game.physics.arcade.accelerateToPointer( bouncy, this.game.input.activePointer, 500, 500, 500 );
+    }
+    function collectCar (bouncy, cars) {
+        // Removes the diamond from the screen
+        cars.kill()
     }
 };
