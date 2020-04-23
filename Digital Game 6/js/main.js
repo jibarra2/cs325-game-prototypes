@@ -31,11 +31,7 @@ window.onload = function() {
     }
 
     function create() {
-          //  Enable world bounds, but disable the floor
-          this.physics.world.setBoundsCollision(true, true, true, false);
-
-          paddle = this.add.image(400, 550, 'paddle');
-
+        this.add.image(400, 550, 'paddle');
     }
 
     function update() {
