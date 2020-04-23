@@ -77,9 +77,12 @@ window.onload = function() {
         // Make it bounce off of the world bounds.
         bouncy.body.collideWorldBounds = true;
         
-        house1 = game.add.image( 636, 264, 'House1');
-        house2 = game.add.image( 395, 518, 'House2');
-        
+        house1 = game.add.image( 1236, 364, 'House1');
+        house2 = game.add.image( 695, 1018, 'House2');
+        mailbox = game.add.image( 100, 784, 'Mailbox');
+        cars = game.add.image( 734, 900, 'Car');
+        beds = game.add.image( 391, 284, 'Bed');
+
         // Add some text using a CSS style.
         // Center it in X, and position its top 15 pixels from the top of the world.
         var style = { font: "25px Verdana", fill: "#9999ff", align: "center" };
