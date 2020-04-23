@@ -14,10 +14,20 @@ window.onload = function() {
     "use strict";
     
     var game = new Phaser.Game( 800, 600, Phaser.AUTO, 'game', { preload: preload, create: create, update: update } );
-    
+    let house1
+    let house2
+    let mailbox
+    let cars
+    let beds
+
     function preload() {
         // Load an image and call it 'logo'.
         game.load.image( 'Tornado', 'assets/Tornado.png' );
+        game.load.image( 'Bed', 'assets/Bed.png');
+        game.load.image( 'Car', 'assets/Car.png');
+        game.load.image( 'House1', 'assets/house1.png');
+        game.load.image( 'House2', 'assets/House2.png');
+        game.load.image( 'Mailbox', 'assets/Mailbox.png');
         // load a tilemap and call it 'map'.
         // from .json file
         game.load.tilemap('map', 'assets/tilemap_example.json', null, Phaser.Tilemap.TILED_JSON);
@@ -56,6 +66,13 @@ window.onload = function() {
         // Anchor the sprite at its center, as opposed to its top-left corner.
         // so it will be truly centered.
         bouncy.anchor.setTo( 0.5, 0.5 );
+
+        cars = game.add.group()
+        cars.enableBody = true
+
+        for (var i = 0; i < 4; i++) {
+            let car = cars.create(i * Math.random(), i * Math.random(), 'car')
+        }
         
         // Turn on the arcade physics engine for this sprite.
         game.physics.enable( bouncy, Phaser.Physics.ARCADE );
