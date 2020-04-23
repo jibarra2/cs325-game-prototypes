@@ -93,6 +93,13 @@ window.onload = function() {
         beds = game.add.image( 391, 284, 'Bed');
         game.physics.enable( beds, Phaser.Physics.ARCADE );
 
+        // Create a sprite at the center of the screen using the 'logo' image.
+        bouncy = game.add.sprite( game.world.centerX, game.world.centerY, 'Tornado' );
+        // Anchor the sprite at its center, as opposed to its top-left corner.
+        // so it will be truly centered.
+        bouncy.anchor.setTo( 0.5, 0.5 );
+
+
         // Add some text using a CSS style.
         // Center it in X, and position its top 15 pixels from the top of the world.
         var style = { font: "25px Verdana", fill: "#9999ff", align: "center" };
@@ -111,9 +118,10 @@ window.onload = function() {
         // This function returns the rotation angle that makes it visually match its
         // new trajectory.
         bouncy.rotation = game.physics.arcade.accelerateToPointer( bouncy, this.game.input.activePointer, 500, 500, 500 );
-        game.physics.arcade.overlap(cars, bouncy, collectCar, null, this)
+        game.physics.arcade.overlap( bouncy, cars, collectCar, null, this)
     }
-    function collectCar (cars, bouncy) {
+
+    function collectCar( bouncy, cars) {
         // Removes the car from the screen
         cars.kill()
     }
