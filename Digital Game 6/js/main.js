@@ -67,18 +67,18 @@ window.onload = function() {
         // so it will be truly centered.
         bouncy.anchor.setTo( 0.5, 0.5 );
 
-        house1 = game.add.group()
-
-        for (var i = 0; i < 3; i++) {
-            const house = house1.create(i * Math.random, i + 100, 'House1')
-        }
-
-
+        //house1 = game.add.group()
+        //for (var i = 0; i < 3; i++) {
+          //  const house = house1.create(i * Math.random, i + 100, 'House1')
+        //}
         
         // Turn on the arcade physics engine for this sprite.
         game.physics.enable( bouncy, Phaser.Physics.ARCADE );
         // Make it bounce off of the world bounds.
         bouncy.body.collideWorldBounds = true;
+        
+        house1 = game.add.image( 636, 264, 'House1');
+        house2 = game.add.image( 395, 518, 'House2');
         
         // Add some text using a CSS style.
         // Center it in X, and position its top 15 pixels from the top of the world.
