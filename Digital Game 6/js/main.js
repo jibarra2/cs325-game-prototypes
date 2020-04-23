@@ -13,14 +13,10 @@ window.onload = function() {
         type: Phaser.AUTO,
         width: 800,
         height: 600,
-        parent: 'game',
         scene: {
             preload: preload,
             create: create,
             update: update
-        },
-        physics: {
-            default: 'arcade'
         }
     };
     
@@ -31,7 +27,7 @@ window.onload = function() {
     }
 
     function create() {
-        this.add.image(400, 550, 'paddle');
+        this.add.image(400, 300, 'paddle');
     }
 
     function update() {
