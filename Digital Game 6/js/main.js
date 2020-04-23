@@ -61,13 +61,6 @@ window.onload = function() {
         //  Resize the world
         layer1.resizeWorld();
 
-        
-        // Create a sprite at the center of the screen using the 'logo' image.
-        bouncy = game.add.sprite( game.world.centerX, game.world.centerY, 'Tornado' );
-        // Anchor the sprite at its center, as opposed to its top-left corner.
-        // so it will be truly centered.
-        bouncy.anchor.setTo( 0.5, 0.5 );
-
         //house1 = game.add.group()
         //for (var i = 0; i < 3; i++) {
           //  const house = house1.create(i * Math.random, i + 100, 'House1')
