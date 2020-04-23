@@ -19,6 +19,7 @@ window.onload = function() {
     let mailbox
     let cars
     let beds
+    let bouncy
 
     function preload() {
         // Load an image and call it 'logo'.
@@ -40,9 +41,9 @@ window.onload = function() {
     
     var map;
     var layer1;
-    var bouncy;
     
     function create() {
+        game.physics.startSystem(Phaser.Physics.ARCADE)
         // Create the map. 
         map = game.add.tilemap('map');
         // for csv files specify the tile size.
@@ -78,10 +79,19 @@ window.onload = function() {
         bouncy.body.collideWorldBounds = true;
         
         house1 = game.add.image( 1236, 364, 'House1');
+        game.physics.enable( house1, Phaser.Physics.ARCADE );
+
         house2 = game.add.image( 695, 1018, 'House2');
+        game.physics.enable( house2, Phaser.Physics.ARCADE );
+
         mailbox = game.add.image( 100, 784, 'Mailbox');
+        game.physics.enable( mailbox, Phaser.Physics.ARCADE );
+
         cars = game.add.image( 734, 900, 'Car');
+        game.physics.enable( cars, Phaser.Physics.ARCADE );
+
         beds = game.add.image( 391, 284, 'Bed');
+        game.physics.enable( beds, Phaser.Physics.ARCADE );
 
         // Add some text using a CSS style.
         // Center it in X, and position its top 15 pixels from the top of the world.
@@ -100,11 +110,11 @@ window.onload = function() {
         // in X or Y.
         // This function returns the rotation angle that makes it visually match its
         // new trajectory.
-        game.physics.arcade.overlap(cars, bouncy, collectCar, null, this)
         bouncy.rotation = game.physics.arcade.accelerateToPointer( bouncy, this.game.input.activePointer, 500, 500, 500 );
+        game.physics.arcade.overlap(cars, bouncy, collectCar, null, this)
     }
     function collectCar (cars, bouncy) {
-        // Removes the diamond from the screen
+        // Removes the car from the screen
         cars.kill()
     }
 };
