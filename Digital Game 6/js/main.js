@@ -23,13 +23,13 @@ window.onload = function() {
     var game = new Phaser.Game(config);
 
     function preload() {
-        game.load.image( 'paddle', 'assets1/paddle1.png');
+        this.load.image( 'paddle', 'assets1/paddle1.png');
     }
 
     var paddle;
 
     function create() {
-        paddle = game.add.sprite(400, 550, 'paddle');
+        paddle = game.add.image(400, 550, 'paddle');
     }
 
     function update() {
