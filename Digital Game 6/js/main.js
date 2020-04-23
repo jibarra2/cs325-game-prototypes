@@ -69,10 +69,10 @@ window.onload = function() {
 
         cars = game.add.group()
         cars.enableBody = true
-
-        for (var i = 0; i < 4; i++) {
-            let car = cars.create(i * Math.random(), 0, 'car')
-        }
+        
+        let car = cars.create(253, 634, 'car')
+        let car = cars.create(642, 153, 'car')
+        let car = cars.create(435, 394, 'car')
         
         // Turn on the arcade physics engine for this sprite.
         game.physics.enable( bouncy, Phaser.Physics.ARCADE );
