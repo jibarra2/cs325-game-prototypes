@@ -71,7 +71,7 @@ window.onload = function() {
         cars.enableBody = true
 
         for (var i = 0; i < 4; i++) {
-            let car = cars.create(i * Math.random(), i * Math.random(), 'car')
+            let car = cars.create(i * Math.random(), 0, 'car')
         }
         
         // Turn on the arcade physics engine for this sprite.
