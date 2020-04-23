@@ -29,7 +29,7 @@ window.onload = function() {
     var paddle;
 
     function create() {
-        game.add.sprite(400, 550, 'paddle');
+        paddle = game.add.sprite(400, 550, 'paddle');
     }
 
     function update() {
