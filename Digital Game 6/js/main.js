@@ -34,7 +34,7 @@ window.onload = function() {
           //  Enable world bounds, but disable the floor
           this.physics.world.setBoundsCollision(true, true, true, false);
 
-          paddle = game.add.sprite(400, 550, 'paddle');
+          paddle = this.add.image(400, 550, 'paddle');
 
     }
 
