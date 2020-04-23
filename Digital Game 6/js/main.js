@@ -13,7 +13,12 @@ window.onload = function() {
     
     "use strict";
     
-    var game = new Phaser.Game( 800, 600, Phaser.AUTO, 'game', { preload: preload, create: create, update: update } );
+    const game = new Phaser.Game(800, 600, Phaser.AUTO, '', {
+        preload: preload,
+        create: create,
+        update: update
+    })
+    
     let house1
     let house2
     let mailbox
@@ -104,17 +109,18 @@ window.onload = function() {
     }
     
     function update() {
+        game.physics.arcade.overlap( bouncy, cars, collectCar, null, this)
         // Accelerate the 'logo' sprite towards the cursor,
         // accelerating at 500 pixels/second and moving no faster than 500 pixels/second
         // in X or Y.
         // This function returns the rotation angle that makes it visually match its
         // new trajectory.
         bouncy.rotation = game.physics.arcade.accelerateToPointer( bouncy, this.game.input.activePointer, 500, 500, 500 );
-        game.physics.arcade.overlap( bouncy, cars, collectCar, null, this)
     }
 
-    function collectCar( bouncy, cars) {
+    function collectCar( bouncy, cars){
         // Removes the car from the screen
         cars.kill()
     }
+
 };
