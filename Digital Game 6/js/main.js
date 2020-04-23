@@ -67,12 +67,13 @@ window.onload = function() {
         // so it will be truly centered.
         bouncy.anchor.setTo( 0.5, 0.5 );
 
-        cars = game.add.group()
-        cars.enableBody = true
-        
-        let car = cars.create(253, 634, 'car')
-        let car = cars.create(642, 153, 'car')
-        let car = cars.create(435, 394, 'car')
+        house1 = game.add.group()
+
+        for (var i = 0; i < 12; i++) {
+            const house = house1.create(i * 70, 0, 'houses')
+        }
+
+
         
         // Turn on the arcade physics engine for this sprite.
         game.physics.enable( bouncy, Phaser.Physics.ARCADE );
