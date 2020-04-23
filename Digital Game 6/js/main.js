@@ -18,7 +18,6 @@ window.onload = function() {
     function preload() {
         // Load an image and call it 'logo'.
         game.load.image( 'logo', 'assets/phaser.png' );
-        game.load.image( 'grass', 'assets/Grass.jpg')
         // load a tilemap and call it 'map'.
         // from .json file
         game.load.tilemap('map', 'assets/tilemap_example.json', null, Phaser.Tilemap.TILED_JSON);
@@ -51,7 +50,6 @@ window.onload = function() {
         //  Resize the world
         layer1.resizeWorld();
 
-        this.add.image(400, 300, 'grass');
         
         // Create a sprite at the center of the screen using the 'logo' image.
         bouncy = game.add.sprite( game.world.centerX, game.world.centerY, 'logo' );
