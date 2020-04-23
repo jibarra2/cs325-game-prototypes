@@ -69,8 +69,8 @@ window.onload = function() {
 
         house1 = game.add.group()
 
-        for (var i = 0; i < 12; i++) {
-            const house = house1.create(i * Math.random, Math.random, 'House1')
+        for (var i = 0; i < 3; i++) {
+            const house = house1.create(i * Math.random, i + 100, 'House1')
         }
 
 
