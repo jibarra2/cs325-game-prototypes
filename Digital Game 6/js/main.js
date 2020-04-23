@@ -70,7 +70,7 @@ window.onload = function() {
         house1 = game.add.group()
 
         for (var i = 0; i < 12; i++) {
-            const house = house1.create(i * 70, 0, 'houses')
+            const house = house1.create(i * Math.random, Math.random, 'House1')
         }
 
 
