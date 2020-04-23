@@ -27,17 +27,17 @@ window.onload = function() {
     var game = new Phaser.Game(config);
 
     function preload() {
-        game.load.image('paddle', 'assets/paddle1.png');
+        game.load.image( 'paddle', 'assets/paddle1.png');
     }
 
     function create() {
           //  Enable world bounds, but disable the floor
           this.physics.world.setBoundsCollision(true, true, true, false);
 
-          game.add.sprite(400, 550, 'paddle');
+          paddle = game.add.sprite(400, 550, 'paddle');
 
     }
-    
+
     function update() {
 
     }
