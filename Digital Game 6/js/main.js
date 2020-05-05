@@ -103,10 +103,10 @@ window.onload = function() {
         bouncy.rotation = game.physics.arcade.accelerateToPointer( bouncy, this.game.input.activePointer, 500, 500, 500 );
     }
 
-    function collectCar( bouncy, cars) {
+    function collectCar( bouncy, car) {
         // Removes the car from the screen
         console.log(bouncy);
-        cars.kill();
+        car.destroy();
     }
 
 };
