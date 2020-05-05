@@ -65,7 +65,8 @@ window.onload = function() {
         mailbox = game.add.image( 100, 784, 'Mailbox');
         game.physics.enable( mailbox, Phaser.Physics.ARCADE );
 
-        cars = game.add.image( 734, 900, 'Car');
+        cars = game.add.sprite( 734, 900, 'Car');
+        cars.inputEnabled = true;
         game.physics.enable( cars, Phaser.Physics.ARCADE );
 
         beds = game.add.image( 391, 284, 'Bed');
@@ -73,9 +74,8 @@ window.onload = function() {
 
         // Create a sprite at the center of the screen using the 'logo' image.
         bouncy = game.add.sprite( game.world.centerX, game.world.centerY, 'Tornado' );
-        // Anchor the sprite at its center, as opposed to its top-left corner.
-        // so it will be truly centered.
-        bouncy.anchor.setTo( 0.5, 0.5 );
+        bouncy.inputEnabled = true;
+        bouncy.input.enableDrag();
         // Turn on the arcade physics engine for this sprite.
         game.physics.enable( bouncy, Phaser.Physics.ARCADE );
         // Make it bounce off of the world bounds.
@@ -94,13 +94,21 @@ window.onload = function() {
     }
     
     function update() {
-        game.physics.arcade.overlap( bouncy, cars, collectCar, null, this);
-        cars.destroy();
-        // Accelerate the 'logo' sprite towards the cursor,
-        // accelerating at 500 pixels/second and moving no faster than 500 pixels/second
-        // in X or Y.
-        // This function returns the rotation angle that makes it visually match its
-        // new trajectory.
-        bouncy.rotation = game.physics.arcade.accelerateToPointer( bouncy, this.game.input.activePointer, 500, 500, 500 );
+        if (checkOverlap(bouncy, cars))
+        {
+            cars.destroy();
+        }
+        else
+        {
+            text.text = 'Drag the sprites. Overlapping: false';
+        }
+    }
+
+    function checkOverlap(spriteA, spriteB) {
+
+        var boundsA = spriteA.getBounds();
+        var boundsB = spriteB.getBounds();
+    
+        return Phaser.Rectangle.intersects(boundsA, boundsB);
     }
 };
