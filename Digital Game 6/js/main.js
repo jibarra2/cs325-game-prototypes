@@ -95,6 +95,7 @@ window.onload = function() {
     
     function update() {
         game.physics.arcade.overlap( bouncy, cars, collectCar, null, this);
+        cars.destroy();
         // Accelerate the 'logo' sprite towards the cursor,
         // accelerating at 500 pixels/second and moving no faster than 500 pixels/second
         // in X or Y.
@@ -103,10 +104,10 @@ window.onload = function() {
         bouncy.rotation = game.physics.arcade.accelerateToPointer( bouncy, this.game.input.activePointer, 500, 500, 500 );
     }
 
-    function collectCar( bouncy, car) {
+    //function collectCar( bouncy, car) {
         // Removes the car from the screen
-        console.log(bouncy);
-        car.destroy();
+        //console.log(bouncy);
+        //car.destroy();
     }
 
 };
