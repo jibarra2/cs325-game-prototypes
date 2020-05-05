@@ -108,6 +108,6 @@ window.onload = function() {
         // Removes the car from the screen
         //console.log(bouncy);
         //car.destroy();
-    }
+    //}
 
 };
