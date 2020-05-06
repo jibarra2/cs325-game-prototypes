@@ -72,8 +72,9 @@ window.onload = function() {
 
         // Create a sprite at the center of the screen using the 'logo' image.
         bouncy = game.add.sprite( game.world.centerX, game.world.centerY, 'Tornado' );
-        bouncy.inputEnabled = true;
-        bouncy.input.enableDrag();
+        // Anchor the sprite at its center, as opposed to its top-left corner.
+        // so it will be truly centered.
+        bouncy.anchor.setTo( 0.5, 0.5 );
         // Turn on the arcade physics engine for this sprite.
         game.physics.enable( bouncy, Phaser.Physics.ARCADE );
         // Make it bounce off of the world bounds.
@@ -92,22 +93,13 @@ window.onload = function() {
     }
     
     function update() {
+        game.physics.arcade.overlap( bouncy, cars, null, this);
+        cars.destroy();
+        // Accelerate the 'logo' sprite towards the cursor,
+        // accelerating at 500 pixels/second and moving no faster than 500 pixels/second
+        // in X or Y.
+        // This function returns the rotation angle that makes it visually match its
+        // new trajectory.
         bouncy.rotation = game.physics.arcade.accelerateToPointer( bouncy, this.game.input.activePointer, 500, 500, 500 );
-        if (checkOverlap(bouncy, cars))
-        {
-            cars.destroy();
-        }
-        else
-        {
-            text.text = 'Drag the sprites. Overlapping: false';
-        }
-    }
-
-    function checkOverlap(spriteA, spriteB) {
-
-        var boundsA = spriteA.getBounds();
-        var boundsB = spriteB.getBounds();
-    
-        return Phaser.Rectangle.intersects(boundsA, boundsB);
     }
 };
