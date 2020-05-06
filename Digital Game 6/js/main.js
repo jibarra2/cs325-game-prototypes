@@ -100,5 +100,24 @@ window.onload = function() {
         // This function returns the rotation angle that makes it visually match its
         // new trajectory.
         bouncy.rotation = game.physics.arcade.accelerateToPointer( bouncy, this.game.input.activePointer, 500, 500, 500 );
+    
+        if (checkOverlap(bouncy, cars))
+        {
+            cars.destroy();
+        }
+        else
+        {
+            text.text = 'Drag the sprites. Overlapping: false';
+        }
     }
+
+    function checkOverlap(spriteA, spriteB) {
+
+        var boundsA = spriteA.getBounds();
+        var boundsB = spriteB.getBounds();
+    
+        return Phaser.Rectangle.intersects(boundsA, boundsB);
+    
+    }
+
 };
