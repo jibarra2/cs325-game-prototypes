@@ -103,9 +103,10 @@ window.onload = function() {
         // new trajectory.
         bouncy.rotation = game.physics.arcade.accelerateToPointer( bouncy, this.game.input.activePointer, 500, 500, 500 );
     
-    },
+    }
 
-    function collectCars(bouncy,cars){
+    function collectCars(bouncy,cars)
+    {
         cars.disableBody(true, true);
     }
 
