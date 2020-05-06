@@ -101,22 +101,13 @@ window.onload = function() {
         // new trajectory.
         bouncy.rotation = game.physics.arcade.accelerateToPointer( bouncy, this.game.input.activePointer, 500, 500, 500 );
     
-        if (checkOverlap(bouncy, cars))
+        if (bouncy.overlap(cars))
         {
-            cars.destroy();
+            cars.kill();
         }
         else
         {
         }
-    }
-
-    function checkOverlap(spriteA, spriteB) {
-
-        var boundsA = spriteA.getBounds();
-        var boundsB = spriteB.getBounds();
-    
-        return Phaser.Rectangle.intersects(boundsA, boundsB);
-    
     }
 
 };
