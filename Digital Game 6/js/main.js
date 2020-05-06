@@ -3,12 +3,12 @@ window.onload = function() {
     "use strict";
     
     var game = new Phaser.Game( 800, 600, Phaser.AUTO, 'game', { preload: preload, create: create, update: update } );
-    var bouncy
-    var house1
-    var house2
-    var mailbox
-    var cars
-    var beds
+    var bouncy;
+    var house1;
+    var house2;
+    var mailbox;
+    var cars;
+    var beds;
    
 
     function preload() {
@@ -33,8 +33,8 @@ window.onload = function() {
     var layer1;
     
     function create() {
-        game.physics.startSystem(Phaser.Physics.ARCADE)
-        // Create the map. 
+        game.physics.startSystem(Phaser.Physics.ARCADE);
+        // Create the map.
         map = game.add.tilemap('map');
         // for csv files specify the tile size.
         //map = game.add.tilemap('map', 32, 32);
@@ -66,7 +66,7 @@ window.onload = function() {
         game.physics.enable( mailbox, Phaser.Physics.ARCADE );
 
         cars = game.add.image( 893, 500, 'Car');
-        game.physics.enable( cars, Phaser.Physics.ARCADE);
+        game.physics.enable(cars, Phaser.Physics.ARCADE);
 
         beds = game.add.image( 391, 284, 'Bed');
         game.physics.enable( beds, Phaser.Physics.ARCADE );
@@ -101,13 +101,6 @@ window.onload = function() {
         // new trajectory.
         bouncy.rotation = game.physics.arcade.accelerateToPointer( bouncy, this.game.input.activePointer, 500, 500, 500 );
     
-        if (bouncy.overlap(cars))
-        {
-            beds.kill();
-        }
-        else
-        {
-        }
     }
 
 };
