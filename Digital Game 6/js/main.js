@@ -65,8 +65,8 @@ window.onload = function() {
         mailbox = game.add.image( 100, 784, 'Mailbox');
         game.physics.enable( mailbox, Phaser.Physics.ARCADE );
 
-        cars = game.add.image( 734, 900, 'Car');
-        game.physics.enable(cars, Phaser.Physics.ARCADE);
+        cars = game.add.image( 893, 500, 'Car');
+        game.physics.enable( cars, Phaser.Physics.ARCADE);
 
         beds = game.add.image( 391, 284, 'Bed');
         game.physics.enable( beds, Phaser.Physics.ARCADE );
