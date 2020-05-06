@@ -103,7 +103,7 @@ window.onload = function() {
     
         if (bouncy.overlap(cars))
         {
-            cars.kill();
+            beds.kill();
         }
         else
         {
