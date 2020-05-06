@@ -107,7 +107,6 @@ window.onload = function() {
         }
         else
         {
-            text.text = 'Drag the sprites. Overlapping: false';
         }
     }
 
