@@ -7,7 +7,6 @@ window.onload = function() {
     var house1;
     var house2;
     var mailbox;
-    var cars;
     var beds;
    
 
@@ -15,7 +14,7 @@ window.onload = function() {
         // Load an image and call it 'logo'.
         game.load.image( 'Tornado', 'assets/Tornado.png' );
         game.load.image( 'Bed', 'assets/Bed.png');
-        game.load.image( 'Car', 'assets/Car.png');
+        game.load.image( 'car', 'assets/Car.png');
         game.load.image( 'House1', 'assets/house1.png');
         game.load.image( 'House2', 'assets/House2.png');
         game.load.image( 'Mailbox', 'assets/Mailbox.png');
@@ -65,8 +64,11 @@ window.onload = function() {
         mailbox = game.add.image( 100, 784, 'Mailbox');
         game.physics.enable( mailbox, Phaser.Physics.ARCADE );
 
-        cars = game.add.image( 893, 500, 'Car');
-        game.physics.enable(cars, Phaser.Physics.ARCADE);
+        var cars = this.physics.add.group({
+            key: 'car',
+            repeat: 3,
+            setXY: { x: 300, y: 150, stepX: 400 }
+        });
 
         beds = game.add.image( 391, 284, 'Bed');
         game.physics.enable( beds, Phaser.Physics.ARCADE );
@@ -91,8 +93,10 @@ window.onload = function() {
         
         game.camera.follow(bouncy);
 
-        this.physics.add.overlap(bouncy, cars, this.collectCars, null, this);
-        
+        game.physics.add.overlap(bouncy, cars, collectCar, null, this);
+
+        this.bouncy = bouncy;
+
     }
     
     function update() {
@@ -102,12 +106,12 @@ window.onload = function() {
         // This function returns the rotation angle that makes it visually match its
         // new trajectory.
         bouncy.rotation = game.physics.arcade.accelerateToPointer( bouncy, this.game.input.activePointer, 500, 500, 500 );
-    
+        
     }
 
-    function collectCars(bouncy,cars)
-    {
-        cars.disableBody(true, true);
+    function collectCar(bouncy, car){
+        
+        car.disableBody(true, true);
     }
 
 };
