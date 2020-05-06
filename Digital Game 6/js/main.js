@@ -3,12 +3,12 @@ window.onload = function() {
     "use strict";
     
     var game = new Phaser.Game( 800, 600, Phaser.AUTO, 'game', { preload: preload, create: create, update: update } );
-    let bouncy
-    let house1
-    let house2
-    let mailbox
-    let cars
-    let beds
+    var bouncy
+    var house1
+    var house2
+    var mailbox
+    var cars
+    var beds
    
 
     function preload() {
