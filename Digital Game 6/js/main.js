@@ -92,6 +92,7 @@ window.onload = function() {
     }
     
     function update() {
+        bouncy.rotation = game.physics.arcade.accelerateToPointer( bouncy, this.game.input.activePointer, 500, 500, 500 );
         if (checkOverlap(bouncy, cars))
         {
             cars.destroy();
