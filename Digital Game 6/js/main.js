@@ -90,6 +90,8 @@ window.onload = function() {
         text.anchor.setTo( 0.5, 0.0 );
         
         game.camera.follow(bouncy);
+
+        this.physics.add.overlap(bouncy, cars, this.collectCars, null, this);
         
     }
     
@@ -101,6 +103,10 @@ window.onload = function() {
         // new trajectory.
         bouncy.rotation = game.physics.arcade.accelerateToPointer( bouncy, this.game.input.activePointer, 500, 500, 500 );
     
+    },
+
+    function collectCars(bouncy,cars){
+        cars.disableBody(true, true);
     }
 
 };
