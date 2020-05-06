@@ -94,8 +94,6 @@ window.onload = function() {
     }
     
     function update() {
-        game.physics.arcade.overlap( bouncy, cars, null, this);
-        //cars.destroy();
         // Accelerate the 'logo' sprite towards the cursor,
         // accelerating at 500 pixels/second and moving no faster than 500 pixels/second
         // in X or Y.
