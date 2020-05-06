@@ -93,7 +93,7 @@ window.onload = function() {
         
         game.camera.follow(bouncy);
 
-        game.physics.add.overlap(bouncy, cars, collectCar, null, this);
+        game.physics.add.overlap(bouncy, cars, this.collectCar, null, this);
 
         this.bouncy = bouncy;
 
@@ -109,8 +109,8 @@ window.onload = function() {
         
     }
 
-    function collectCar(bouncy, car){
-        
+    function collectCar(bouncy, car)
+    {
         car.disableBody(true, true);
     }
 
