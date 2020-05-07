@@ -67,7 +67,7 @@ window.onload = function() {
 
         car = game.add.sprite( 834, 1234, 'car');
 
-        beds = game.add.sprite( 391, 284, 'bed');
+        bed = game.add.sprite( 391, 284, 'bed');
 
         // Create a sprite at the center of the screen using the 'logo' image.
         bouncy = game.add.sprite( game.world.centerX, game.world.centerY, 'Tornado' );
