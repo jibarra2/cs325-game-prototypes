@@ -2,7 +2,7 @@ window.onload = function() {
     
     "use strict";
     
-    var game = new Phaser.Game( 800, 600, Phaser.AUTO, 'game', { preload: preload, create: create, update: update, collectCar: collectCar } );
+    var game = new Phaser.Game( 800, 600, Phaser.AUTO, 'game', { preload: preload, create: create, update: update } );
     var bouncy;
     var house1;
     var house2;
@@ -64,7 +64,7 @@ window.onload = function() {
         mailbox = game.add.image( 100, 784, 'Mailbox');
         game.physics.enable( mailbox, Phaser.Physics.ARCADE );
 
-        var car = game.add.image( 834, 1234, 'car');
+        var car = game.add.sprite( 834, 1234, 'car');
 
         beds = game.add.image( 391, 284, 'Bed');
         game.physics.enable( beds, Phaser.Physics.ARCADE );
@@ -89,11 +89,6 @@ window.onload = function() {
         
         game.camera.follow(bouncy);
 
-        game.physics.add.overlap(bouncy, car, this.collectCar, null, this);
-        
-
-        this.bouncy = bouncy;
-
     }
     
     function update() {
@@ -104,9 +99,17 @@ window.onload = function() {
         // new trajectory.
         bouncy.rotation = game.physics.arcade.accelerateToPointer( bouncy, this.game.input.activePointer, 500, 500, 500 );
         
+        if (checkOverlap(bouncy, car))
+        {
+            car.disableBody();
+        }
     }
 
-    function collectCar (bouncy, car){ 
-        car.disableBody();
+    function checkOverlap(spriteA, spriteB) {
+
+        var boundsA = spriteA.getBounds();
+        var boundsB = spriteB.getBounds();
+    
+        return Phaser.Rectangle.intersects(boundsA, boundsB);
     }
 };
