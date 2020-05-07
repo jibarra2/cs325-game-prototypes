@@ -102,7 +102,7 @@ window.onload = function() {
         
         if (checkOverlap(bouncy, car))
         {
-            car.disableBody(true, true);
+            car.kill();
         }
     }
 
