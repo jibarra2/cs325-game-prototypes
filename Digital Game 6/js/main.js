@@ -109,55 +109,55 @@ window.onload = function() {
         }
         else if(checkOverlap(bouncy, car2))
         {
-            car2.kill();
+            car2.destroy();
             score += 1;
             gametext.setText('Score: ' + score);
         }
         else if (checkOverlap(bouncy, bed))
         {
-            bed.kill();
+            bed.destroy();
             score += 1;
             gametext.setText('Score: ' + score);
         }
         else if (checkOverlap(bouncy, bed2))
         {
-            bed2.kill();
+            bed2.destroy();
             score += 0;
             gametext.setText('Score: ' + score);
         }
         else if (checkOverlap(bouncy, house1))
         {
-            house1.kill();
+            house1.destroy();
             score += 0;
             gametext.setText('Score: ' + score);
         }
         else if (checkOverlap(bouncy, house12))
         {
-            house12.kill();
+            house12.destroy();
             score += 0;
             gametext.setText('Score: ' + score);
         }
         else if (checkOverlap(bouncy, house2))
         {
-            house2.kill();
+            house2.destroy();
             score += 0;
             gametext.setText('Score: ' + score);
         }
         else if (checkOverlap(bouncy, house22))
         {
-            house22.kill();
+            house22.destroy();
             score += 0;
             gametext.setText('Score: ' + score);
         }
         else if (checkOverlap(bouncy, mailbox))
         {
-            mailbox.kill();
+            mailbox.destroy();
             score += 0;
             gametext.setText('Score: ' + score);
         }
         else if (checkOverlap(bouncy, mailbox2))
         {
-            mailbox2.kill();
+            mailbox2.destroy();
             score += 0;
             gametext.setText('Score: ' + score);
         }
