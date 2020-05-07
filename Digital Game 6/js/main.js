@@ -62,7 +62,7 @@ window.onload = function() {
         house22 = game.add.sprite(169, 900, 'house2');
 
         mailbox = game.add.sprite(100, 200, 'mailbox');
-        mailbox2 = game.add.sprite(1000, 1225, 'mailbox');
+        mailbox2 = game.add.sprite(599, 1225, 'mailbox');
 
         car = game.add.sprite(834, 1234, 'car');
         car2 = game.add.sprite(1043, 293, 'car');
