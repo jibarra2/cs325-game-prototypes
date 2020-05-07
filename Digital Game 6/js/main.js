@@ -110,13 +110,13 @@ window.onload = function() {
         else if(checkOverlap(bouncy, car2))
         {
             car2.kill();
-            score += 0;
+            score += 1;
             gametext.setText('Score: ' + score);
         }
         else if (checkOverlap(bouncy, bed))
         {
             bed.kill();
-            score += 0;
+            score += 1;
             gametext.setText('Score: ' + score);
         }
         else if (checkOverlap(bouncy, bed2))
@@ -158,7 +158,7 @@ window.onload = function() {
         else if (checkOverlap(bouncy, mailbox2))
         {
             mailbox2.kill();
-            score += 1;
+            score += 0;
             gametext.setText('Score: ' + score);
         }
         else{
