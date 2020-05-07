@@ -14,6 +14,7 @@ window.onload = function() {
     var house12;
     var house22;
     var mailbox2;
+    var score = 0;
    
 
     function preload() {
@@ -82,9 +83,9 @@ window.onload = function() {
         // Add some text using a CSS style.
         // Center it in X, and position its top 15 pixels from the top of the world.
         var style = { font: "25px Verdana", fill: "#9999ff", align: "center" };
-        var text = game.add.text( 400, 15, "WATCH OUT FOR THE TWISTER!", style );
-        text.fixedToCamera = true;
-        text.anchor.setTo( 0.5, 0.0 );
+        var gametext = game.add.text( 400, 15, "Score: 0", style );
+        gametext.fixedToCamera = true;
+        gametext.anchor.setTo( 0.5, 0.0 );
         game.camera.follow(bouncy);
 
     }
@@ -100,42 +101,63 @@ window.onload = function() {
         if (checkOverlap(bouncy, car))
         {
             car.kill();
+            score += 25;
+            gametext.setText('Score: ' + score);
+            
         }
         else if(checkOverlap(bouncy, car2))
         {
             car2.kill();
+            score += 25;
+            gametext.setText('Score: ' + score);
         }
         else if (checkOverlap(bouncy, bed))
         {
             bed.kill();
+            score += 15;
+            gametext.setText('Score: ' + score);
         }
         else if (checkOverlap(bouncy, bed2))
         {
             bed2.kill();
+            score += 15;
+            gametext.setText('Score: ' + score);
         }
         else if (checkOverlap(bouncy, house1))
         {
             house1.kill();
+            score += 75;
+            gametext.setText('Score: ' + score);
         }
         else if (checkOverlap(bouncy, house12))
         {
             house12.kill();
+            score += 75;
+            gametext.setText('Score: ' + score);
         }
         else if (checkOverlap(bouncy, house2))
         {
             house2.kill();
+            score += 100;
+            gametext.setText('Score: ' + score);
         }
         else if (checkOverlap(bouncy, house22))
         {
             house22.kill();
+            score += 100;
+            gametext.setText('Score: ' + score);
         }
         else if (checkOverlap(bouncy, mailbox))
         {
             mailbox.kill();
+            score += 35;
+            gametext.setText('Score: ' + score);
         }
         else if (checkOverlap(bouncy, mailbox2))
         {
             mailbox2.kill();
+            score += 35;
+            gametext.setText('Score: ' + score);
         }
         else{
         }
