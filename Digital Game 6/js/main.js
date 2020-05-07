@@ -8,7 +8,7 @@ window.onload = function() {
     var house2;
     var mailbox;
     var bed;
-    var car
+    var car;
    
 
     function preload() {
@@ -106,6 +106,9 @@ window.onload = function() {
         else if (checkOverlap(bouncy, bed))
         {
             bed.kill();
+        }
+        else{
+
         }
     }
 
