@@ -85,7 +85,7 @@ window.onload = function() {
         // Add some text using a CSS style.
         // Center it in X, and position its top 15 pixels from the top of the world.
         style = { font: "25px Verdana", fill: "#9999ff", align: "center" };
-        gametext = game.add.setText( 400, 15, "Score: 0", style );
+        gametext = game.add.text( 400, 15, "Score: 0", style );
         gametext.fixedToCamera = true;
         gametext.anchor.setTo( 0.5, 0.0 );
         game.camera.follow(bouncy);
@@ -110,7 +110,7 @@ window.onload = function() {
         else if(checkOverlap(bouncy, car2))
         {
             car2.kill();
-            score +=251;
+            score += 25;
             gametext.setText('Score: ' + score);
         }
         else if (checkOverlap(bouncy, bed))
