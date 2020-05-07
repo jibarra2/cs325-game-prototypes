@@ -7,14 +7,14 @@ window.onload = function() {
     var house1;
     var house2;
     var mailbox;
-    var beds;
+    var bed;
     var car
    
 
     function preload() {
         // Load an image and call it 'logo'.
         game.load.image( 'Tornado', 'assets/Tornado.png' );
-        game.load.image( 'Bed', 'assets/Bed.png');
+        game.load.image( 'bed', 'assets/Bed.png');
         game.load.image( 'car', 'assets/Car.png');
         game.load.image( 'House1', 'assets/house1.png');
         game.load.image( 'House2', 'assets/House2.png');
@@ -67,8 +67,7 @@ window.onload = function() {
 
         car = game.add.sprite( 834, 1234, 'car');
 
-        beds = game.add.image( 391, 284, 'Bed');
-        game.physics.enable( beds, Phaser.Physics.ARCADE );
+        beds = game.add.sprite( 391, 284, 'bed');
 
         // Create a sprite at the center of the screen using the 'logo' image.
         bouncy = game.add.sprite( game.world.centerX, game.world.centerY, 'Tornado' );
@@ -103,6 +102,10 @@ window.onload = function() {
         if (checkOverlap(bouncy, car))
         {
             car.kill();
+        }
+        else if (checkOverlap(bouncy, bed))
+        {
+            bed.kill();
         }
     }
 
