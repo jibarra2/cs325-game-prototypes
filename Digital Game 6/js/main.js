@@ -2,7 +2,7 @@ window.onload = function() {
     
     "use strict";
     
-    var game = new Phaser.Game( 800, 600, Phaser.AUTO, 'game', { preload: preload, create: create, update: update } );
+    var game = new Phaser.Game( 800, 600, Phaser.AUTO, 'game', { preload: preload, create: create, update: update, collectCars: collectCars } );
     var bouncy;
     var house1;
     var house2;
@@ -93,6 +93,11 @@ window.onload = function() {
         
         game.camera.follow(bouncy);
 
+        game.physics.add.overlap(bouncy, cars, this.collectCars, null, this);
+        
+
+        this.bouncy = bouncy;
+
     }
     
     function update() {
@@ -103,5 +108,9 @@ window.onload = function() {
         // new trajectory.
         bouncy.rotation = game.physics.arcade.accelerateToPointer( bouncy, this.game.input.activePointer, 500, 500, 500 );
         
+    }
+
+    function collectCars (bouncy, car){ 
+        car.disableBody();
     }
 };
