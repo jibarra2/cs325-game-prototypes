@@ -103,62 +103,62 @@ window.onload = function() {
         if (checkOverlap(bouncy, car))
         {
             car.kill();
-            score += 25;
+            score += 0;
             gametext.setText('Score: ' + score);
             
         }
         else if(checkOverlap(bouncy, car2))
         {
             car2.kill();
-            score += 25;
+            score += 0;
             gametext.setText('Score: ' + score);
         }
         else if (checkOverlap(bouncy, bed))
         {
             bed.kill();
-            score += 15;
+            score += 0;
             gametext.setText('Score: ' + score);
         }
         else if (checkOverlap(bouncy, bed2))
         {
             bed2.kill();
-            score += 15;
+            score += 0;
             gametext.setText('Score: ' + score);
         }
         else if (checkOverlap(bouncy, house1))
         {
             house1.kill();
-            score += 75;
+            score += 0;
             gametext.setText('Score: ' + score);
         }
         else if (checkOverlap(bouncy, house12))
         {
             house12.kill();
-            score += 75;
+            score += 0;
             gametext.setText('Score: ' + score);
         }
         else if (checkOverlap(bouncy, house2))
         {
             house2.kill();
-            score += 100;
+            score += 0;
             gametext.setText('Score: ' + score);
         }
         else if (checkOverlap(bouncy, house22))
         {
             house22.kill();
-            score += 100;
+            score += 0;
             gametext.setText('Score: ' + score);
         }
         else if (checkOverlap(bouncy, mailbox))
         {
             mailbox.kill();
-            score += 35;
+            score += 0;
             gametext.setText('Score: ' + score);
         }
         else if (checkOverlap(bouncy, mailbox2))
         {
             mailbox2.kill();
-            score += 35;
+            score += 1;
             gametext.setText('Score: ' + score);
         }
         else{
