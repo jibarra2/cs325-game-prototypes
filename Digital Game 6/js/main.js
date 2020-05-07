@@ -15,6 +15,8 @@ window.onload = function() {
     var house22;
     var mailbox2;
     var score = 0;
+    var style = { font: "25px Verdana", fill: "#9999ff", align: "center" };
+    var gametext = game.add.text( 400, 15, "Score: 0", style );
    
 
     function preload() {
@@ -82,8 +84,6 @@ window.onload = function() {
         bouncy.body.collideWorldBounds = true;
         // Add some text using a CSS style.
         // Center it in X, and position its top 15 pixels from the top of the world.
-        var style = { font: "25px Verdana", fill: "#9999ff", align: "center" };
-        var gametext = game.add.text( 400, 15, "Score: 0", style );
         gametext.fixedToCamera = true;
         gametext.anchor.setTo( 0.5, 0.0 );
         game.camera.follow(bouncy);
