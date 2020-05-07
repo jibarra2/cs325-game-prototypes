@@ -3,30 +3,22 @@ window.onload = function() {
     "use strict";
     
     var game = new Phaser.Game( 800, 600, Phaser.AUTO, 'game', { preload: preload, create: create, update: update } );
-    var bouncy;
-    var house1;
-    var house2;
-    var mailbox;
-    var bed;
-    var bed2;
-    var car;
-    var car2;
-    var house12;
-    var house22;
-    var mailbox2;
-    var score = 0;
-    var style = null;
-    var gametext = null;
+    let bouncy
+    let house1
+    let house2
+    let mailbox
+    let cars
+    let beds
    
 
     function preload() {
         // Load an image and call it 'logo'.
         game.load.image( 'Tornado', 'assets/Tornado.png' );
-        game.load.image( 'bed', 'assets/Bed.png');
-        game.load.image( 'car', 'assets/Car.png');
-        game.load.image( 'house1', 'assets/house1.png');
-        game.load.image( 'house2', 'assets/House2.png');
-        game.load.image( 'mailbox', 'assets/Mailbox.png');
+        game.load.image( 'Bed', 'assets/Bed.png');
+        game.load.image( 'Car', 'assets/Car.png');
+        game.load.image( 'House1', 'assets/house1.png');
+        game.load.image( 'House2', 'assets/House2.png');
+        game.load.image( 'Mailbox', 'assets/Mailbox.png');
         // load a tilemap and call it 'map'.
         // from .json file
         game.load.tilemap('map', 'assets/tilemap_example.json', null, Phaser.Tilemap.TILED_JSON);
@@ -41,37 +33,43 @@ window.onload = function() {
     var layer1;
     
     function create() {
-        game.physics.startSystem(Phaser.Physics.ARCADE);
-        // Create the map.
+        game.physics.startSystem(Phaser.Physics.ARCADE)
+        // Create the map. 
         map = game.add.tilemap('map');
         // for csv files specify the tile size.
         //map = game.add.tilemap('map', 32, 32);
+        
         //add tiles
         map.addTilesetImage('tiles');
         
         // Create a layer from the map
         //using the layer name given in the .json file
         layer1 = map.createLayer('Tile Layer 1');
-
         //for csv files
         //layer1 = map.createLayer(0);
+        
         //  Resize the world
         layer1.resizeWorld();
 
-        house1 = game.add.sprite(1236, 364, 'house1');
-        house12 = game.add.sprite(532, 403, 'house1');
+        //house1 = game.add.group()
+        //for (var i = 0; i < 3; i++) {
+          //  const house = house1.create(i * Math.random, i + 100, 'House1')
+        //}
+        
+        house1 = game.add.image( 1236, 364, 'House1');
+        game.physics.enable( house1, Phaser.Physics.ARCADE );
 
-        house2 = game.add.sprite(695, 1018, 'house2');
-        house22 = game.add.sprite(169, 900, 'house2');
+        house2 = game.add.image( 695, 1018, 'House2');
+        game.physics.enable( house2, Phaser.Physics.ARCADE );
 
-        mailbox = game.add.sprite(100, 200, 'mailbox');
-        mailbox2 = game.add.sprite(599, 1225, 'mailbox');
+        mailbox = game.add.image( 100, 784, 'Mailbox');
+        game.physics.enable( mailbox, Phaser.Physics.ARCADE );
 
-        car = game.add.sprite(834, 1234, 'car');
-        car2 = game.add.sprite(1043, 293, 'car');
+        cars = game.add.image( 893, 500, 'Car');
+        game.physics.enable( cars, Phaser.Physics.ARCADE);
 
-        bed = game.add.sprite(391, 284, 'bed');
-        bed2 = game.add.sprite(723, 1352, 'bed');
+        beds = game.add.image( 391, 284, 'Bed');
+        game.physics.enable( beds, Phaser.Physics.ARCADE );
 
         // Create a sprite at the center of the screen using the 'logo' image.
         bouncy = game.add.sprite( game.world.centerX, game.world.centerY, 'Tornado' );
@@ -82,14 +80,17 @@ window.onload = function() {
         game.physics.enable( bouncy, Phaser.Physics.ARCADE );
         // Make it bounce off of the world bounds.
         bouncy.body.collideWorldBounds = true;
+
+
         // Add some text using a CSS style.
         // Center it in X, and position its top 15 pixels from the top of the world.
-        style = { font: "25px Verdana", fill: "#9999ff", align: "center" };
-        gametext = game.add.text( 400, 15, "Score: 0", style );
-        gametext.fixedToCamera = true;
-        gametext.anchor.setTo( 0.5, 0.0 );
+        var style = { font: "25px Verdana", fill: "#9999ff", align: "center" };
+        var text = game.add.text( 400, 15, "WATCH OUT FOR THE TWISTER!", style );
+        text.fixedToCamera = true;
+        text.anchor.setTo( 0.5, 0.0 );
+        
         game.camera.follow(bouncy);
-
+        
     }
     
     function update() {
@@ -99,77 +100,7 @@ window.onload = function() {
         // This function returns the rotation angle that makes it visually match its
         // new trajectory.
         bouncy.rotation = game.physics.arcade.accelerateToPointer( bouncy, this.game.input.activePointer, 500, 500, 500 );
-        
-        if (checkOverlap(bouncy, car))
-        {
-            car.kill();
-            score += 25;
-            gametext.setText('Score: ' + score);
-            
-        }
-        else if(checkOverlap(bouncy, car2))
-        {
-            car2.kill();
-            score += 25;
-            gametext.setText('Score: ' + score);
-        }
-        else if (checkOverlap(bouncy, bed))
-        {
-            bed.kill();
-            score += 15;
-            gametext.setText('Score: ' + score);
-        }
-        else if (checkOverlap(bouncy, bed2))
-        {
-            bed2.kill();
-            score += 15;
-            gametext.setText('Score: ' + score);
-        }
-        else if (checkOverlap(bouncy, house1))
-        {
-            house1.kill();
-            score += 75;
-            gametext.setText('Score: ' + score);
-        }
-        else if (checkOverlap(bouncy, house12))
-        {
-            house12.kill();
-            score += 75;
-            gametext.setText('Score: ' + score);
-        }
-        else if (checkOverlap(bouncy, house2))
-        {
-            house2.kill();
-            score += 100;
-            gametext.setText('Score: ' + score);
-        }
-        else if (checkOverlap(bouncy, house22))
-        {
-            house22.kill();
-            score += 100;
-            gametext.setText('Score: ' + score);
-        }
-        else if (checkOverlap(bouncy, mailbox))
-        {
-            mailbox.kill();
-            score += 35;
-            gametext.setText('Score: ' + score);
-        }
-        else if (checkOverlap(bouncy, mailbox2))
-        {
-            mailbox2.kill();
-            score += 35;
-            gametext.setText('Score: ' + score);
-        }
-        else{
-        }
-    }
-
-    function checkOverlap(spriteA, spriteB) {
-
-        var boundsA = spriteA.getBounds();
-        var boundsB = spriteB.getBounds();
     
-        return Phaser.Rectangle.intersects(boundsA, boundsB);
     }
+
 };
