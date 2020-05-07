@@ -102,62 +102,62 @@ window.onload = function() {
         
         if (checkOverlap(bouncy, car))
         {
-            car.kill();
+            car.disableBody(true,true);
             score += 0;
             gametext.setText('Score: ' + score);
             
         }
         else if(checkOverlap(bouncy, car2))
         {
-            car2.destroy();
+            car2.disableBody(true,true);
             score += 1;
             gametext.setText('Score: ' + score);
         }
         else if (checkOverlap(bouncy, bed))
         {
-            bed.destroy();
+            bed.disableBody(true,true);
             score += 1;
             gametext.setText('Score: ' + score);
         }
         else if (checkOverlap(bouncy, bed2))
         {
-            bed2.destroy();
+            bed2.disableBody(true,true);
             score += 0;
             gametext.setText('Score: ' + score);
         }
         else if (checkOverlap(bouncy, house1))
         {
-            house1.destroy();
+            house1.disableBody(true,true);
             score += 0;
             gametext.setText('Score: ' + score);
         }
         else if (checkOverlap(bouncy, house12))
         {
-            house12.destroy();
+            house12.disableBody(true,true);
             score += 0;
             gametext.setText('Score: ' + score);
         }
         else if (checkOverlap(bouncy, house2))
         {
-            house2.destroy();
+            house2.disableBody(true,true);
             score += 0;
             gametext.setText('Score: ' + score);
         }
         else if (checkOverlap(bouncy, house22))
         {
-            house22.destroy();
+            house22.disableBody(true,true);
             score += 0;
             gametext.setText('Score: ' + score);
         }
         else if (checkOverlap(bouncy, mailbox))
         {
-            mailbox.destroy();
+            mailbox.disableBody(true,true);
             score += 0;
             gametext.setText('Score: ' + score);
         }
         else if (checkOverlap(bouncy, mailbox2))
         {
-            mailbox2.destroy();
+            mailbox2.disableBody(true,true);
             score += 0;
             gametext.setText('Score: ' + score);
         }
