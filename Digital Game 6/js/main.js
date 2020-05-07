@@ -8,6 +8,7 @@ window.onload = function() {
     var house2;
     var mailbox;
     var beds;
+    var car
    
 
     function preload() {
@@ -64,7 +65,7 @@ window.onload = function() {
         mailbox = game.add.image( 100, 784, 'Mailbox');
         game.physics.enable( mailbox, Phaser.Physics.ARCADE );
 
-        var car = game.add.sprite( 834, 1234, 'car');
+        car = game.add.sprite( 834, 1234, 'car');
 
         beds = game.add.image( 391, 284, 'Bed');
         game.physics.enable( beds, Phaser.Physics.ARCADE );
